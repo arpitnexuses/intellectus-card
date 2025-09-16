@@ -36,20 +36,6 @@ export default function Home() {
       </div>
 
       <div className="relative max-w-6xl mx-auto">
-        {/* Arrow Navigation */}
-        <button
-          onClick={prevSlide}
-          className="fixed left-4 top-1/2 -translate-y-1/2 z-10 bg-[#0D81B5] hover:bg-[#0D81B5]/80 text-white p-3 rounded-full transition-colors shadow-lg"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-
-        <button
-          onClick={nextSlide}
-          className="fixed right-4 top-1/2 -translate-y-1/2 z-10 bg-[#0D81B5] hover:bg-[#0D81B5]/80 text-white p-3 rounded-full transition-colors shadow-lg"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
 
         {/* Cards Container */}
         <div className="overflow-hidden">
@@ -169,16 +155,34 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex justify-center mt-6 space-x-2">
-          {[0, 1].map((index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                currentSlide === index ? "bg-[#0D81B5]" : "bg-slate-400"
-              }`}
-            />
-          ))}
+        {/* Pagination Component */}
+        <div className="flex items-center justify-start mt-8 space-x-2">
+          {/* Left Arrow */}
+          <button
+            onClick={prevSlide}
+            className="w-0 h-0 border-l-0 border-r-[8px] border-t-[6px] border-b-[6px] border-r-[#0D81B5] border-t-transparent border-b-transparent hover:border-r-[#0D81B5]/80 transition-colors"
+          />
+
+          {/* Pagination Dots */}
+          <div className="flex items-center space-x-2">
+            {[0, 1].map((index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`transition-all duration-300 ${
+                  currentSlide === index 
+                    ? "w-6 h-2 bg-gray-800 rounded-full" 
+                    : "w-2 h-2 bg-gray-300 rounded-full hover:bg-gray-400"
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Right Arrow */}
+          <button
+            onClick={nextSlide}
+            className="w-0 h-0 border-l-[8px] border-r-0 border-t-[6px] border-b-[6px] border-l-[#0D81B5] border-t-transparent border-b-transparent hover:border-l-[#0D81B5]/80 transition-colors"
+          />
         </div>
       </div>
     </main>
