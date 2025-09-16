@@ -62,40 +62,40 @@ export default function Home() {
           >
             {/* Vision-Led Companies Card */}
             <div className="w-3/5 px-2">
-              <Card className="bg-[#0C4562]/90 border-2 border-slate-400/80 shadow-2xl shadow-black/50 p-4 hover:bg-[#0C4562] hover:shadow-3xl hover:shadow-black/60 hover:border-slate-300 transition-all duration-300" style={{ boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1)" }}>
-                <div className="mb-1">
+              <Card className="bg-[#0C4562]/90 border-2 border-slate-400/80 p-4 hover:bg-[#0C4562] hover:border-slate-300 hover:scale-95 transition-all duration-300">
+                <div className="mb-2">
                   <div className="w-16 h-16 bg-[#0C4562]/60 rounded-lg flex items-center justify-center">
                     <Shield className="w-10 h-10 text-slate-300" />
                   </div>
                 </div>
 
-                <h2
-                  className="text-xl font-bold text-white mb-0.5"
-                  style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)" }}
+                <h1
+                  className="text-3xl font-bold text-white mb-0 text-left"
+                  style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)", lineHeight: "1.0" }}
                 >
                   For Vision-Led and Early Stage Companies
-                </h2>
+                </h1>
                 <p
-                  className="text-slate-300 mb-2 text-base border-b border-white pb-2"
-                  style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)" }}
+                  className="text-slate-300 mb-2 text-base border-b border-white pb-2 text-left -mt-3"
+                  style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)", lineHeight: "1.0" }}
                 >
                   Aligned with your vision
                 </p>
 
                 <div className="space-y-3 mb-4 mt-4">
-                  <div className="p-2 bg-[#0C4562]/40 rounded-lg border border-white/30 shadow-lg shadow-black/30" style={{ boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)" }}>
+                  <div className="p-2 bg-[#0C4562]/40 rounded-lg border border-white/30" style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.4), 0 12px 36px rgba(0, 0, 0, 0.2)" }}>
                     <p
-                      className="text-slate-200 leading-relaxed italic text-sm"
-                      style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)" }}
+                      className="text-slate-200 leading-relaxed italic text-sm text-center"
+                      style={{ textShadow: "0 0 6px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 0, 0, 0.6), 0 0 18px rgba(0, 0, 0, 0.4), 1px 1px 3px rgba(0, 0, 0, 0.9)" }}
                     >
                       Aligned with Growth: Structured around achievable milestones, sharing in your success.
                     </p>
                   </div>
 
-                  <div className="p-2 bg-[#0C4562]/40 rounded-lg border border-white/30 shadow-lg shadow-black/30" style={{ boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)" }}>
+                  <div className="p-2 bg-[#0C4562]/40 rounded-lg border border-white/30" style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.4), 0 12px 36px rgba(0, 0, 0, 0.2)" }}>
                     <p
-                      className="text-slate-200 leading-relaxed italic text-sm"
-                      style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)" }}
+                      className="text-slate-200 leading-relaxed italic text-sm text-center"
+                      style={{ textShadow: "0 0 6px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 0, 0, 0.6), 0 0 18px rgba(0, 0, 0, 0.4), 1px 1px 3px rgba(0, 0, 0, 0.9)" }}
                     >
                       Essential Support Only: Minimal operating overhead, while still having access to strategic
                       guidance.
@@ -103,63 +103,67 @@ export default function Home() {
                   </div>
                 </div>
 
-                <Button
-                  className="bg-[#0D81B5] hover:bg-[#0D81B5]/80 text-white px-4 py-1.5 rounded-lg font-medium transition-colors w-fit text-sm"
-                  onClick={() => window.open("https://intellectuscapital.com.au/contact-us/", "_blank")}
-                >
-                  Discover more
-                </Button>
+                <div className="flex justify-start">
+                  <Button
+                    className="bg-[#0D81B5] hover:bg-[#0D81B5]/80 text-white px-4 py-1.5 rounded-lg font-medium transition-colors w-fit text-sm"
+                    onClick={() => window.open("https://intellectuscapital.com.au/contact-us/", "_blank")}
+                  >
+                    Discover more
+                  </Button>
+                </div>
               </Card>
             </div>
 
             {/* Established Businesses Card */}
             <div className="w-3/5 px-2">
-              <Card className="bg-[#0C4562]/90 border-2 border-slate-400/80 shadow-2xl shadow-black/50 p-4 hover:bg-[#0C4562] hover:shadow-3xl hover:shadow-black/60 hover:border-slate-300 transition-all duration-300" style={{ boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1)" }}>
+              <Card className="bg-[#0C4562]/90 border-2 border-slate-400/80 p-4 hover:bg-[#0C4562] hover:border-slate-300 hover:scale-95 transition-all duration-300">
                 <div className="mb-1">
                   <div className="w-16 h-16 bg-[#0C4562]/60 rounded-lg flex items-center justify-center">
                     <Shield className="w-10 h-10 text-slate-300" />
                   </div>
                 </div>
 
-                <h2
-                  className="text-xl font-bold text-white mb-0.5"
-                  style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)" }}
+                <h1
+                  className="text-3xl font-bold text-white mb-0 text-left"
+                  style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)", lineHeight: "1.0" }}
                 >
                   For Established Businesses & Financial Sponsors
-                </h2>
+                </h1>
                 <p
-                  className="text-slate-300 mb-2 text-base border-b border-white pb-2"
-                  style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)" }}
+                  className="text-slate-300 mb-2 text-base border-b border-white pb-2 text-left -mt-3"
+                  style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)", lineHeight: "1.0" }}
                 >
                   Structured. Transparent. Results-driven
                 </p>
 
                 <div className="space-y-3 mb-4 mt-4">
-                  <div className="p-2 bg-[#0C4562]/40 rounded-lg border border-white/30 shadow-lg shadow-black/30" style={{ boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)" }}>
+                  <div className="p-2 bg-[#0C4562]/40 rounded-lg border border-white/30" style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.4), 0 12px 36px rgba(0, 0, 0, 0.2)" }}>
                     <p
-                      className="text-slate-200 leading-relaxed italic text-sm"
-                      style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)" }}
+                      className="text-slate-200 leading-relaxed italic text-sm text-center"
+                      style={{ textShadow: "0 0 6px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 0, 0, 0.6), 0 0 18px rgba(0, 0, 0, 0.4), 1px 1px 3px rgba(0, 0, 0, 0.9)" }}
                     >
                       Performance-Based Fees: Fees structured around milestones to align success with cost efficiency.
                     </p>
                   </div>
 
-                  <div className="p-2 bg-[#0C4562]/40 rounded-lg border border-white/30 shadow-lg shadow-black/30" style={{ boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)" }}>
+                  <div className="p-2 bg-[#0C4562]/40 rounded-lg border border-white/30" style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.4), 0 12px 36px rgba(0, 0, 0, 0.2)" }}>
                     <p
-                      className="text-slate-200 leading-relaxed italic text-sm"
-                      style={{ textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)" }}
+                      className="text-slate-200 leading-relaxed italic text-sm text-center"
+                      style={{ textShadow: "0 0 6px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 0, 0, 0.6), 0 0 18px rgba(0, 0, 0, 0.4), 1px 1px 3px rgba(0, 0, 0, 0.9)" }}
                     >
                       Flexible Engagement: Tailored success structures that align with your objectives and timelines.
                     </p>
                   </div>
                 </div>
 
-                <Button
-                  className="bg-[#0D81B5] hover:bg-[#0D81B5]/80 text-white px-4 py-1.5 rounded-lg font-medium transition-colors w-fit text-sm"
-                  onClick={() => window.open("https://intellectuscapital.com.au/contact-us/", "_blank")}
-                >
-                  Discover more
-                </Button>
+                <div className="flex justify-start">
+                  <Button
+                    className="bg-[#0D81B5] hover:bg-[#0D81B5]/80 text-white px-4 py-1.5 rounded-lg font-medium transition-colors w-fit text-sm"
+                    onClick={() => window.open("https://intellectuscapital.com.au/contact-us/", "_blank")}
+                  >
+                    Discover more
+                  </Button>
+                </div>
               </Card>
             </div>
           </div>
