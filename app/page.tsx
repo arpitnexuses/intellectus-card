@@ -48,9 +48,9 @@ export default function Home() {
           >
             {/* Vision-Led Companies Card */}
             <div className="w-3/5 px-2">
-              <Card className="bg-[#0C4562]/90 border-2 border-slate-400/80 p-4 hover:bg-[#0C4562] hover:border-slate-300 hover:scale-95 transition-all duration-300">
+              <Card className="bg-[#0C4562]/90 border border-white/20 p-4 hover:bg-[#0C4562] hover:scale-95 transition-all duration-300" style={{ boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2), 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)" }}>
                 <div className="mb-2">
-                  <div className="w-16 h-16 bg-[#0C4562]/60 rounded-lg flex items-center justify-center">
+                  <div className="w-16 h-16 bg-[#0C4562]/60 rounded-full flex items-center justify-center" style={{ boxShadow: "0 0 8px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)" }}>
                     <Shield className="w-10 h-10 text-slate-300" />
                   </div>
                 </div>
@@ -69,23 +69,23 @@ export default function Home() {
                 </p>
 
                 <div className="space-y-3 mb-4 mt-4">
-                  <div className="p-2 bg-[#0C4562]/40 rounded-lg border border-white/30" style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.4), 0 12px 36px rgba(0, 0, 0, 0.2)" }}>
-                    <p
-                      className="text-slate-200 leading-relaxed italic text-sm text-center"
-                      style={{ textShadow: "0 0 6px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 0, 0, 0.6), 0 0 18px rgba(0, 0, 0, 0.4), 1px 1px 3px rgba(0, 0, 0, 0.9)" }}
-                    >
-                      Aligned with Growth: Structured around achievable milestones, sharing in your success.
-                    </p>
+                  <div className="p-2 bg-[#0C4562]/40 rounded-lg" style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.2), 0 12px 36px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.2), inset 1px 0 0 rgba(255, 255, 255, 0.08), inset -1px 0 0 rgba(0, 0, 0, 0.1), 0 0 8px rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2)" }}>
+                      <p
+                        className="text-slate-200 leading-relaxed text-sm text-center"
+                        style={{ textShadow: "0 1px 2px rgba(0, 0, 0, 0.4)" }}
+                      >
+                        <span className="italic">Aligned with Growth:</span> Structured around achievable milestones, sharing in your success.
+                      </p>
                   </div>
 
-                  <div className="p-2 bg-[#0C4562]/40 rounded-lg border border-white/30" style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.4), 0 12px 36px rgba(0, 0, 0, 0.2)" }}>
-                    <p
-                      className="text-slate-200 leading-relaxed italic text-sm text-center"
-                      style={{ textShadow: "0 0 6px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 0, 0, 0.6), 0 0 18px rgba(0, 0, 0, 0.4), 1px 1px 3px rgba(0, 0, 0, 0.9)" }}
-                    >
-                      Essential Support Only: Minimal operating overhead, while still having access to strategic
-                      guidance.
-                    </p>
+                  <div className="p-2 bg-[#0C4562]/40 rounded-lg" style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.2), 0 12px 36px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.2), inset 1px 0 0 rgba(255, 255, 255, 0.08), inset -1px 0 0 rgba(0, 0, 0, 0.1), 0 0 8px rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2)" }}>
+                      <p
+                        className="text-slate-200 leading-relaxed text-sm text-center"
+                        style={{ textShadow: "0 1px 2px rgba(0, 0, 0, 0.4)" }}
+                      >
+                        <span className="italic">Essential Support Only:</span> Minimal operating overhead, while still having access to strategic
+                        guidance.
+                      </p>
                   </div>
                 </div>
 
@@ -102,9 +102,9 @@ export default function Home() {
 
             {/* Established Businesses Card */}
             <div className="w-3/5 px-2">
-              <Card className="bg-[#0C4562]/90 border-2 border-slate-400/80 p-4 hover:bg-[#0C4562] hover:border-slate-300 hover:scale-95 transition-all duration-300">
+              <Card className="bg-[#0C4562]/90 border border-white/20 p-4 hover:bg-[#0C4562] hover:scale-95 transition-all duration-300" style={{ boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2), 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)" }}>
                 <div className="mb-1">
-                  <div className="w-16 h-16 bg-[#0C4562]/60 rounded-lg flex items-center justify-center">
+                  <div className="w-16 h-16 bg-[#0C4562]/60 rounded-full flex items-center justify-center" style={{ boxShadow: "0 0 8px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)" }}>
                     <Shield className="w-10 h-10 text-slate-300" />
                   </div>
                 </div>
@@ -123,22 +123,22 @@ export default function Home() {
                 </p>
 
                 <div className="space-y-3 mb-4 mt-4">
-                  <div className="p-2 bg-[#0C4562]/40 rounded-lg border border-white/30" style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.4), 0 12px 36px rgba(0, 0, 0, 0.2)" }}>
-                    <p
-                      className="text-slate-200 leading-relaxed italic text-sm text-center"
-                      style={{ textShadow: "0 0 6px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 0, 0, 0.6), 0 0 18px rgba(0, 0, 0, 0.4), 1px 1px 3px rgba(0, 0, 0, 0.9)" }}
-                    >
-                      Performance-Based Fees: Fees structured around milestones to align success with cost efficiency.
-                    </p>
+                  <div className="p-2 bg-[#0C4562]/40 rounded-lg" style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.2), 0 12px 36px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.2), inset 1px 0 0 rgba(255, 255, 255, 0.08), inset -1px 0 0 rgba(0, 0, 0, 0.1), 0 0 8px rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2)" }}>
+                      <p
+                        className="text-slate-200 leading-relaxed text-sm text-center"
+                        style={{ textShadow: "0 1px 2px rgba(0, 0, 0, 0.4)" }}
+                      >
+                        <span className="italic">Performance-Based Fees:</span> Fees structured around milestones to align success with cost efficiency.
+                      </p>
                   </div>
 
-                  <div className="p-2 bg-[#0C4562]/40 rounded-lg border border-white/30" style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.4), 0 12px 36px rgba(0, 0, 0, 0.2)" }}>
-                    <p
-                      className="text-slate-200 leading-relaxed italic text-sm text-center"
-                      style={{ textShadow: "0 0 6px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 0, 0, 0.6), 0 0 18px rgba(0, 0, 0, 0.4), 1px 1px 3px rgba(0, 0, 0, 0.9)" }}
-                    >
-                      Flexible Engagement: Tailored success structures that align with your objectives and timelines.
-                    </p>
+                  <div className="p-2 bg-[#0C4562]/40 rounded-lg" style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.2), 0 12px 36px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.2), inset 1px 0 0 rgba(255, 255, 255, 0.08), inset -1px 0 0 rgba(0, 0, 0, 0.1), 0 0 8px rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2)" }}>
+                      <p
+                        className="text-slate-200 leading-relaxed text-sm text-center"
+                        style={{ textShadow: "0 1px 2px rgba(0, 0, 0, 0.4)" }}
+                      >
+                        <span className="italic">Flexible Engagement:</span> Tailored success structures that align with your objectives and timelines.
+                      </p>
                   </div>
                 </div>
 
