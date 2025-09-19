@@ -47,8 +47,8 @@ export default function Home() {
             }}
           >
             {/* Vision-Led Companies Card */}
-            <div className="w-3/5 px-2">
-              <Card className="bg-[#0C4562]/90 border border-white/20 p-4 hover:bg-[#0C4562] hover:scale-95 transition-all duration-300" style={{ boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2), 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)" }}>
+            <div className="w-3/5 px-2 flex">
+              <Card className="bg-[#0C4562]/90 border border-white/20 p-4 hover:bg-[#0C4562] hover:scale-95 transition-all duration-300 flex-1 flex flex-col" style={{ boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2), 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)" }}>
                 <div className="mb-2">
                   <div className="w-16 h-16 bg-[#0C4562]/60 rounded-full flex items-center justify-center" style={{ boxShadow: "0 0 8px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)" }}>
                     <Shield className="w-10 h-10 text-slate-300" />
@@ -68,7 +68,7 @@ export default function Home() {
                   Aligned with your vision
                 </p>
 
-                <div className="space-y-3 mb-4 mt-4">
+                <div className="space-y-3 mb-4 mt-4 flex-grow">
                   <div className="p-2 bg-[#0C4562]/40 rounded-lg" style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.2), 0 12px 36px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.2), inset 1px 0 0 rgba(255, 255, 255, 0.08), inset -1px 0 0 rgba(0, 0, 0, 0.1), 0 0 8px rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2)" }}>
                       <p
                         className="text-slate-200 leading-relaxed text-sm text-center"
@@ -89,7 +89,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="flex justify-start">
+                <div className="flex justify-start mt-auto">
                   <Button
                     className="bg-[#0D81B5] hover:bg-[#0D81B5]/80 text-white px-4 py-1.5 rounded-lg font-medium transition-colors w-fit text-sm"
                     onClick={() => window.open("https://intellectuscapital.com.au/contact-us/", "_blank")}
@@ -101,8 +101,8 @@ export default function Home() {
             </div>
 
             {/* Established Businesses Card */}
-            <div className="w-3/5 px-2">
-              <Card className="bg-[#0C4562]/90 border border-white/20 p-4 hover:bg-[#0C4562] hover:scale-95 transition-all duration-300" style={{ boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2), 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)" }}>
+            <div className="w-3/5 px-2 flex">
+              <Card className="bg-[#0C4562]/90 border border-white/20 p-4 hover:bg-[#0C4562] hover:scale-95 transition-all duration-300 flex-1 flex flex-col" style={{ boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2), 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)" }}>
                 <div className="mb-1">
                   <div className="w-16 h-16 bg-[#0C4562]/60 rounded-full flex items-center justify-center" style={{ boxShadow: "0 0 8px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)" }}>
                     <Shield className="w-10 h-10 text-slate-300" />
@@ -122,7 +122,7 @@ export default function Home() {
                   Structured. Transparent. Results-driven
                 </p>
 
-                <div className="space-y-3 mb-4 mt-4">
+                <div className="space-y-3 mb-4 mt-4 flex-grow">
                   <div className="p-2 bg-[#0C4562]/40 rounded-lg" style={{ boxShadow: "0 4px 12px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.2), 0 12px 36px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 rgba(0, 0, 0, 0.2), inset 1px 0 0 rgba(255, 255, 255, 0.08), inset -1px 0 0 rgba(0, 0, 0, 0.1), 0 0 8px rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.2)" }}>
                       <p
                         className="text-slate-200 leading-relaxed text-sm text-center"
@@ -142,7 +142,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="flex justify-start">
+                <div className="flex justify-start mt-auto">
                   <Button
                     className="bg-[#0D81B5] hover:bg-[#0D81B5]/80 text-white px-4 py-1.5 rounded-lg font-medium transition-colors w-fit text-sm"
                     onClick={() => window.open("https://intellectuscapital.com.au/contact-us/", "_blank")}
@@ -156,23 +156,23 @@ export default function Home() {
         </div>
 
         {/* Pagination Component */}
-        <div className="flex items-center justify-start mt-8 space-x-2">
+        <div className="flex items-center justify-start mt-8 space-x-4">
           {/* Left Arrow */}
           <button
             onClick={prevSlide}
-            className="w-0 h-0 border-l-0 border-r-[8px] border-t-[6px] border-b-[6px] border-r-[#0D81B5] border-t-transparent border-b-transparent hover:border-r-[#0D81B5]/80 transition-colors"
+            className="w-0 h-0 border-l-0 border-r-[12px] border-t-[8px] border-b-[8px] border-r-[#0D81B5] border-t-transparent border-b-transparent hover:border-r-[#0D81B5]/80 transition-colors"
           />
 
           {/* Pagination Dots */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3">
             {[0, 1].map((index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 className={`transition-all duration-300 ${
                   currentSlide === index 
-                    ? "w-6 h-2 bg-gray-800 rounded-full" 
-                    : "w-2 h-2 bg-gray-300 rounded-full hover:bg-gray-400"
+                    ? "w-8 h-3 bg-gray-800 rounded-full" 
+                    : "w-3 h-3 bg-gray-300 rounded-full hover:bg-gray-400"
                 }`}
               />
             ))}
@@ -181,7 +181,7 @@ export default function Home() {
           {/* Right Arrow */}
           <button
             onClick={nextSlide}
-            className="w-0 h-0 border-l-[8px] border-r-0 border-t-[6px] border-b-[6px] border-l-[#0D81B5] border-t-transparent border-b-transparent hover:border-l-[#0D81B5]/80 transition-colors"
+            className="w-0 h-0 border-l-[12px] border-r-0 border-t-[8px] border-b-[8px] border-l-[#0D81B5] border-t-transparent border-b-transparent hover:border-l-[#0D81B5]/80 transition-colors"
           />
         </div>
       </div>
