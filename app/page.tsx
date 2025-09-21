@@ -15,11 +15,13 @@ export default function Home() {
   const [lastNavigationTime, setLastNavigationTime] = useState(0)
   const [wheelAccumulator, setWheelAccumulator] = useState(0)
   const [isWheelGesture, setIsWheelGesture] = useState(false)
+  const [isNavigating, setIsNavigating] = useState(false)
 
   const nextSlide = () => {
     const now = Date.now()
-    if (now - lastNavigationTime < 300) return // Debounce 300ms
+    if (now - lastNavigationTime < 500 || isNavigating) return // Increased debounce to 500ms + navigation lock
     setLastNavigationTime(now)
+    setIsNavigating(true)
     setCurrentSlide((prev) => (prev + 1) % 2)
     
     // Reset gesture state after navigation
@@ -27,12 +29,18 @@ export default function Home() {
       setIsWheelGesture(false)
       setWheelAccumulator(0)
     }, 100)
+    
+    // Reset navigation lock after animation completes
+    setTimeout(() => {
+      setIsNavigating(false)
+    }, 350) // Slightly longer than transition duration
   }
 
   const prevSlide = () => {
     const now = Date.now()
-    if (now - lastNavigationTime < 300) return // Debounce 300ms
+    if (now - lastNavigationTime < 500 || isNavigating) return // Increased debounce to 500ms + navigation lock
     setLastNavigationTime(now)
+    setIsNavigating(true)
     setCurrentSlide((prev) => (prev - 1 + 2) % 2)
     
     // Reset gesture state after navigation
@@ -40,6 +48,11 @@ export default function Home() {
       setIsWheelGesture(false)
       setWheelAccumulator(0)
     }, 100)
+    
+    // Reset navigation lock after animation completes
+    setTimeout(() => {
+      setIsNavigating(false)
+    }, 350) // Slightly longer than transition duration
   }
 
   // Trackpad/touch navigation
@@ -58,7 +71,7 @@ export default function Home() {
   }
 
   const onTouchEnd = () => {
-    if (!touchStart || !touchEnd || !isDragging) return
+    if (!touchStart || !touchEnd || !isDragging || isNavigating) return
     
     const distance = touchStart - touchEnd
     const isLeftSwipe = distance > minSwipeDistance
@@ -89,7 +102,7 @@ export default function Home() {
   }
 
   const onMouseUp = (e: React.MouseEvent) => {
-    if (!isMouseDown || !mouseStart) return
+    if (!isMouseDown || !mouseStart || isNavigating) return
     
     const distance = mouseStart - e.clientX
     const isLeftSwipe = distance > minSwipeDistance
@@ -111,22 +124,27 @@ export default function Home() {
   const onWheel = (e: React.WheelEvent) => {
     const now = Date.now()
     
+    // Prevent navigation if already navigating or too soon after last navigation
+    if (isNavigating || now - lastNavigationTime < 500) {
+      return
+    }
+    
     // Reset accumulator if too much time has passed (new gesture)
-    if (now - lastNavigationTime > 500) {
+    if (now - lastNavigationTime > 1000) {
       setWheelAccumulator(0)
       setIsWheelGesture(false)
     }
     
-    // Detect horizontal scroll gestures
-    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+    // Only detect horizontal scroll gestures (deltaX) with higher threshold
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY) && Math.abs(e.deltaX) > 2) {
       e.preventDefault()
       
       // Accumulate deltaX values to detect complete gesture
       const newAccumulator = wheelAccumulator + e.deltaX
       setWheelAccumulator(newAccumulator)
       
-      // Only navigate when accumulated value crosses threshold
-      if (Math.abs(newAccumulator) > 50 && !isWheelGesture) {
+      // Only navigate when accumulated value crosses higher threshold (75px)
+      if (Math.abs(newAccumulator) > 75 && !isWheelGesture) {
         setIsWheelGesture(true)
         if (newAccumulator > 0) {
           nextSlide()
@@ -136,33 +154,14 @@ export default function Home() {
         setWheelAccumulator(0) // Reset after navigation
       }
     }
-    // Detect trackpad two-finger horizontal swipes (often reported as vertical scroll)
-    else if (Math.abs(e.deltaY) > 3 && Math.abs(e.deltaX) < 5) {
-      // Check if it's a trackpad gesture (deltaMode 0 = pixels)
-      if (e.deltaMode === 0) {
-        e.preventDefault()
-        
-        // Accumulate deltaY values for vertical gestures
-        const newAccumulator = wheelAccumulator + e.deltaY
-        setWheelAccumulator(newAccumulator)
-        
-        // Only navigate when accumulated value crosses threshold
-        if (Math.abs(newAccumulator) > 50 && !isWheelGesture) {
-          setIsWheelGesture(true)
-          if (newAccumulator > 0) {
-            nextSlide()
-          } else {
-            prevSlide()
-          }
-          setWheelAccumulator(0) // Reset after navigation
-        }
-      }
-    }
+    // Ignore vertical scroll (deltaY) - let page scroll normally
   }
 
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      if (isNavigating) return // Prevent rapid keyboard navigation
+      
       if (e.key === 'ArrowLeft') {
         prevSlide()
       } else if (e.key === 'ArrowRight') {
@@ -172,7 +171,7 @@ export default function Home() {
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [])
+  }, [isNavigating])
 
   return (
     <main className="container mx-auto px-6 py-10 mt-5">
