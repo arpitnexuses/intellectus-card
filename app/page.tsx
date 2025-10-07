@@ -16,6 +16,7 @@ export default function Home() {
   const [wheelAccumulator, setWheelAccumulator] = useState(0)
   const [isWheelGesture, setIsWheelGesture] = useState(false)
   const [isNavigating, setIsNavigating] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   const nextSlide = () => {
     const now = Date.now()
@@ -121,7 +122,7 @@ export default function Home() {
   }
 
   // Mouse wheel navigation for trackpad - improved single gesture detection
-  const onWheel = (e: React.WheelEvent) => {
+  const handleWheel = (e: WheelEvent) => {
     const now = Date.now()
     
     // Prevent navigation if already navigating or too soon after last navigation
@@ -156,6 +157,26 @@ export default function Home() {
     }
     // Ignore vertical scroll (deltaY) - let page scroll normally
   }
+
+  // Mobile detection and window resize handling
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    checkMobile() // Check on mount
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  // Wheel event listener with non-passive option
+  useEffect(() => {
+    const carouselElement = carouselRef.current
+    if (carouselElement) {
+      carouselElement.addEventListener('wheel', handleWheel, { passive: false })
+      return () => carouselElement.removeEventListener('wheel', handleWheel)
+    }
+  }, [wheelAccumulator, isWheelGesture, isNavigating, lastNavigationTime])
 
   // Keyboard navigation
   useEffect(() => {
@@ -204,17 +225,16 @@ export default function Home() {
           onMouseDown={onMouseDown}
           onMouseMove={onMouseMove}
           onMouseUp={onMouseUp}
-          onWheel={onWheel}
         >
           <div
             className="flex transition-transform duration-300 ease-in-out"
             style={{
-              transform: `translateX(-${currentSlide * 40}%)`,
-              width: "160%",
+              transform: `translateX(-${currentSlide * (isMobile ? 50 : 40)}%)`,
+              width: isMobile ? "200%" : "160%",
             }}
           >
             {/* Vision-Led Companies Card */}
-            <div className="w-3/5 px-2 flex">
+            <div className={`${isMobile ? 'w-1/2' : 'w-3/5'} px-2 flex`}>
               <Card className="bg-[#0C4562]/90 border border-white/20 p-4 hover:bg-[#0C4562] hover:scale-95 transition-all duration-300 flex-1 flex flex-col" style={{ boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2), 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)" }}>
                 <div className="mb-2">
                   <div className="w-16 h-16 bg-[#0C4562]/60 rounded-full flex items-center justify-center" style={{ boxShadow: "0 0 8px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)" }}>
@@ -268,7 +288,7 @@ export default function Home() {
             </div>
 
             {/* Established Businesses Card */}
-            <div className="w-3/5 px-2 flex">
+            <div className={`${isMobile ? 'w-1/2' : 'w-3/5'} px-2 flex`}>
               <Card className="bg-[#0C4562]/90 border border-white/20 p-4 hover:bg-[#0C4562] hover:scale-95 transition-all duration-300 flex-1 flex flex-col" style={{ boxShadow: "0 2px 8px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.2), 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1)" }}>
                 <div className="mb-1">
                   <div className="w-16 h-16 bg-[#0C4562]/60 rounded-full flex items-center justify-center" style={{ boxShadow: "0 0 8px rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)" }}>
